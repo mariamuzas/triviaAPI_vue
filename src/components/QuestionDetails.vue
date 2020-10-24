@@ -31,7 +31,7 @@ export default {
 
         answer: null,
 
-        posible_answer: null,
+        answerIndexRandom: null,
         }
     },
 
@@ -45,6 +45,7 @@ export default {
             this.answer = this.currentQuestion.correct_answer
             }
         },
+        
     created: function() {
     this.$parent.$on('update', this.nextQuestion);
     },
@@ -52,12 +53,11 @@ export default {
     computed: {
         answers() {
             let answers = [...this.currentQuestion.incorrect_answers];
-            this.posible_answer = Math.floor(Math.random() * 3) +1;
-            answers.splice(this.posible_answer, 0, this.currentQuestion.correct_answer);
+            this.answerIndexRandom = Math.floor(Math.random() * 3) + 1;
+            answers.splice(this.answerIndexRandom -1, 0, this.currentQuestion.correct_answer);
 
             return answers
         }
-
     },
 }
 </script>
