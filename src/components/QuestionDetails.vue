@@ -1,5 +1,7 @@
 <template>
   <article>
+        <p>Category:{{currentQuestion.category}}</p>
+        <p>Difficulty: {{currentQuestion.difficulty}}</p>
         <span>{{currentQuestion.question}}</span>
         <ul>
             <li v-for="(pos, index) in answers" :key="index">{{pos}}</li>
