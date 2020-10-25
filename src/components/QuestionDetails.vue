@@ -1,17 +1,26 @@
-<template>
+<template lang="html">
   <article>
         <div class="details">
-            <p>Category:{{currentQuestion.category}}</p>
-            <p>Difficulty: {{currentQuestion.difficulty}}</p>
+            <div class="category">
+                <p class="detail">Category</p>
+                <p class="card_details">{{currentQuestion.category}}</p>
+            </div>
+            <div class="difficulty">
+                <p class="detail">Difficulty</p>
+                <p class="card_details">{{currentQuestion.difficulty}}</p>
+            </div>
         </div>
-        <h2>{{currentQuestion.question}}</h2>
-        <ul>
-            <li v-for="(pos, index) in answers" :key="index">{{pos}}</li>
-        </ul>
-        <div class="answer">
-            <button v-on:click="handlingClick">Check your answer</button>
-            <p>{{answer}}.</p>
-        </div>
+            <div class="question">
+                <h2>{{currentQuestion.question}}</h2>
+                <ul>
+                    <li v-for="(pos, index) in answers" :key="index">{{pos}}</li>
+                </ul>
+            </div>
+            <div class="answer">
+                <button class="check_answer" v-on:click="handlingClick">Check your answer</button>
+                <p>{{answer}}</p>
+            </div>
+    
   </article>
 </template>
 
@@ -70,20 +79,83 @@ export default {
 
 <style scoped>
 article{
-    margin: 100px;
+    margin: 30px 5% 0 5%;
 }
 
 .details {
     display: flex; 
-    justify-content: space-between;
-
+    margin-left: 7%;
 }
-.answer {
+
+.category, .difficulty {
+    display: flex;
+    padding: 4px;
+    margin: 10px 30px;
+}
+
+.difficulty {
+    margin-left: 60%;
+    position: absolute;
+}
+.detail, .card_details {
+    padding: 8px;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: 550;
+    /* border: solid 1px; */
+}
+.detail {
+    background-color: #d63447;
+    color: #f6eedf;
+    border-radius: 5px 0 0 5px;
+    text-align: center;
+}
+.card_details {
+    border: solid #d63447 1px;
+    border-radius: 0 5px 5px 0;
+    text-align: center;
+}
+
+.question {
+    position: absolute;
+    /* font-size: 30px; */
+    margin: 40px 15%;
+}
+.answer { 
     display: flex;
     justify-content: space-between;
-    border: solid 1px;
+    /* border: solid 1px; */
     padding: 10px;
-    margin: 10px 60px;
+    margin: 260px 30% 20px 18%;
+    border: solid #ffd31d;
 }
+
+.question > ul {
+    margin: 15px 80px;
+    font-size: 18px;
+}
+
+.check_answer {
+    /* position: absolute; */
+    background-color:#f57b51;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 2px 10px 0 rgba(0,0,0,0.19);
+    color: #f6eedf;
+    font-weight: 600;
+    border: #e6663f solid 1px;
+    border-radius: 5px;
+    padding: 10px;
+    outline:none;
+}
+ .check_answer:hover {
+     background-color: #ffbb29;
+     color: #f6eedf;
+ }
+
+ .answer > p {
+     font-size: 18px;
+     position:absolute;
+     margin-left: 200px;
+     margin-top: 5px;
+ }
 
 </style>

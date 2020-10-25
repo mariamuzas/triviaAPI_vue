@@ -1,4 +1,4 @@
-<template>
+<template lang="html">
     <form v-on:submit.prevent>
         <input type="radio" id="easy" @click="pickEasy">
         <label for="easy">Easy mode</label>
