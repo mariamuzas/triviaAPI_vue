@@ -1,13 +1,17 @@
 <template>
   <article>
-        <p>Category:{{currentQuestion.category}}</p>
-        <p>Difficulty: {{currentQuestion.difficulty}}</p>
-        <span>{{currentQuestion.question}}</span>
+        <div class="details">
+            <p>Category:{{currentQuestion.category}}</p>
+            <p>Difficulty: {{currentQuestion.difficulty}}</p>
+        </div>
+        <h2>{{currentQuestion.question}}</h2>
         <ul>
             <li v-for="(pos, index) in answers" :key="index">{{pos}}</li>
         </ul>
-        <p>Answer: {{answer}}</p>
-        <button v-on:click="handlingClick">Check answer</button>
+        <div class="answer">
+            <button v-on:click="handlingClick">Check your answer</button>
+            <p>{{answer}}.</p>
+        </div>
   </article>
 </template>
 
@@ -64,6 +68,22 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+article{
+    margin: 100px;
+}
+
+.details {
+    display: flex; 
+    justify-content: space-between;
+
+}
+.answer {
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px;
+    padding: 10px;
+    margin: 10px 60px;
+}
 
 </style>

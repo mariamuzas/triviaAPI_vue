@@ -1,10 +1,7 @@
 <template>
-    <form v-on:submit.prevent="pickDifficulty">
-        
-        <p>This is my questions filter</p>
-        <input type="radio" id="easy" @click="pickDifficulty">
-        <label for="easy">Easy</label>
-        <hr>
+    <form v-on:submit.prevent>
+        <input type="radio" id="easy" @click="pickEasy">
+        <label for="easy">Easy mode</label>
     </form>
 </template>
 
@@ -22,7 +19,7 @@ export default {
     },
 
     methods: {
-        pickDifficulty: function() {
+        pickEasy: function() {
             let results = this.cards.filter(card => {
                 return card.difficulty == "easy"
             })

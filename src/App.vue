@@ -1,9 +1,13 @@
 <template>
   <main>
-    <h1>Trivia Questions</h1>
-    <question-filter :cards="cards"></question-filter>
-    <question-details :cards_all="cards"></question-details>
-    <button @click="click">Next</button>
+      <h1>Trivia Questions</h1>
+    <div class="question_details_container">
+      <question-details :cards_all="cards"></question-details>
+    </div>
+    <div class="next_easy">
+      <question-filter :cards="cards"></question-filter>
+      <button @click="click">Next Question</button>
+    </div>
   </main>
 </template>
 
@@ -22,7 +26,7 @@ export default {
   }, 
 
   mounted() {
-    fetch('https://opentdb.com/api.php?amount=80&type=multiple')
+    fetch('https://opentdb.com/api.php?amount=80')
     .then(res => res.json())
     .then(data => this.cards = data.results)
 
@@ -44,6 +48,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.next_easy{
+  display: flex;
+  justify-content: space-evenly;
+}
 
 </style>
