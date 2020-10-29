@@ -102,6 +102,7 @@ article{
     margin: 0px;
     font-size: 15px;
     font-weight: 550;
+    background-color: white;
     /* border: solid 1px; */
 }
 .detail {
@@ -126,8 +127,9 @@ article{
     justify-content: space-between;
     /* border: solid 1px; */
     padding: 10px;
-    margin: 260px 30% 20px 18%;
+    margin: 260px 30% 20px 25%;
     border: solid #ffd31d;
+    background-color: white;
 }
 
 .question > ul {

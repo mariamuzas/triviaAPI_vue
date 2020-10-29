@@ -1,10 +1,5 @@
 <template>
   <main lang="html">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-      </head>
       <body>
         <h1>Trivia Game</h1>
         <div class="question_details_container">
@@ -56,11 +51,16 @@ export default {
 </script>
 
 <style scoped>
+main{
+  background-color: #f6eedf;
+  height: 100vh;
+  width: 100vw;
+}
 h1 {
   display: flex;
   justify-content: center;
   font-size: 5em;
-  color: #ffd31d;
+  color: #ffc115;
   /* background: linear-gradient( 90deg, rgba(255,0,0,1) 15%, rgba(0,0,255,1) 35%, rgba(0,176,0,1 ) 70%, rgb(255, 230, 0) 85%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
