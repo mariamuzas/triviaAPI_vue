@@ -57,10 +57,8 @@ export default {
 
 <style scoped>
 
-main{
-  background-color: #f6eedf;
-  height: 100vh;
-  width: 100vw;
+main {
+  margin: 6vh 0 0 0;
 }
 
 h1 {
@@ -71,7 +69,7 @@ h1 {
   /* background: linear-gradient( 90deg, rgba(255,0,0,1) 15%, rgba(0,0,255,1) 35%, rgba(0,176,0,1 ) 70%, rgb(255, 230, 0) 85%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
-  margin: 40px 0;
+  margin: 0 0 40px  0;
 }
 .next_easy{
   display: flex;
