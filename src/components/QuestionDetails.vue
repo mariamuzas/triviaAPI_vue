@@ -103,7 +103,6 @@ article{
     font-size: 15px;
     font-weight: 550;
     background-color: white;
-    /* border: solid 1px; */
 }
 .detail {
     background-color: #d63447;
